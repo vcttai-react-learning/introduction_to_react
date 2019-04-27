@@ -1,11 +1,19 @@
 import React from 'react';
+import MySeasonDisplay from './MySeasonDisplay';
+import Spinner from './Spinner';
 
 class MySeasonController extends React.Component
 {
+    // Can init state like this, it's same with "this.state = {...}" in constructor
+    // state = { lat: null, errMessage: null };
+
     constructor(props){
         super(props);
 
         this.state = { lat: null, errMessage: null };
+    }
+
+    componentDidMount = () => {
         this.getGeoLocation();
     }
 
@@ -15,25 +23,20 @@ class MySeasonController extends React.Component
                 this.setState({ 
                     lat: position.coords.latitude
                 });
-                console.log(position);
 
                 //DO NOT UPDATE STATE LIKE THIS
                 //this.state.lat = ...
                 //Use this.setState() instead
             },
-            (err) => {
-                this.setState({
-                    errMessage: err.message
-                });
-            }
+            (err) => this.setState( {errMessage: err.message} )
         );
     }
 
-    render(){
+    renderContent = () => {
         if(this.state.lat != null && this.state.errMessage == null){
             return (
                 <div>
-                    <div>Lat: {this.state.lat}</div>
+                    <MySeasonDisplay lat={this.state.lat} />
                 </div>
             );
         }
@@ -41,13 +44,20 @@ class MySeasonController extends React.Component
         if(this.state.errMessage != null){
             return (
                 <div>
-                    <div>Lat: {this.state.lat}</div>
                     <div>Error: {this.state.errMessage}</div>
                 </div>
             );
         }
 
-        return <div>Loading ...</div>;
+        return <Spinner message="Getting Location ..."/>
+    }
+
+    render(){
+        return (
+            <div className="border red">
+                {this.renderContent()}
+            </div>
+        );
     }
 }
 

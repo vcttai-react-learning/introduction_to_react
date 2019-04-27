@@ -5,9 +5,9 @@ import './index.css';
 // import AppOriginal from './App-original';
 import App from './components/App';
 import MyTime from './components/MyTime';
+import MyTimeState from './components/MyTimeState';
 import MyComment from './components/MyComment';
 import MyCommentList from './components/MyCommentList';
-import MySeasonDisplay from './components/MySeasonDisplay';
 import MySeasonController from './components/MySeasonController';
 
 import * as serviceWorker from './serviceWorker';
@@ -22,6 +22,7 @@ setInterval(
     },
     1000
 );
+ReactDOM.render(<MyTimeState />, document.querySelector('#jsx-root #mytime-state'));
 
 
 //== 3. Communicating with props
