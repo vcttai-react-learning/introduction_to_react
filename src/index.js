@@ -9,6 +9,7 @@ import MyTimeState from './components/MyTimeState';
 import MyComment from './components/MyComment';
 import MyCommentList from './components/MyCommentList';
 import MySeasonController from './components/MySeasonController';
+import App07 from './components/App07';
 
 import * as serviceWorker from './serviceWorker';
 
@@ -30,9 +31,12 @@ ReactDOM.render(<MyComment />, document.querySelector('#communicating-props-root
 ReactDOM.render(<MyCommentList />, document.querySelector('#communicating-props-root #comment-list'));
 
 
-//== 4. Class-based components
+//== 4. 5. 6. Class-based components - State - Lifecycle methods
 ReactDOM.render(<MySeasonController />, document.querySelector('#class-component-root #class-component-content'));
 
+
+//== 7. Handling user input
+ReactDOM.render(<App07 />, document.querySelector('#handling-user-input-root #handling-user-input-content '));
 
 //==================
 
