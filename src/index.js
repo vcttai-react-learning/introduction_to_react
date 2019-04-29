@@ -10,6 +10,7 @@ import MyComment from './components/MyComment';
 import MyCommentList from './components/MyCommentList';
 import MySeasonController from './components/MySeasonController';
 import App07 from './components/App07';
+import AppVideo11 from './components/AppVideo11';
 
 import * as serviceWorker from './serviceWorker';
 
@@ -35,8 +36,11 @@ ReactDOM.render(<MyCommentList />, document.querySelector('#communicating-props-
 ReactDOM.render(<MySeasonController />, document.querySelector('#class-component-root #class-component-content'));
 
 
-//== 7. Handling user input
+//== 7. 8. 9. 10. Handling user input - Making request - render image list - React refs
 ReactDOM.render(<App07 />, document.querySelector('#handling-user-input-root #handling-user-input-content '));
+
+//== 11. Test your React mastery - Your video app
+ReactDOM.render(<AppVideo11 />, document.querySelector('#test-react-mastery-root #test-react-mastery-content'));
 
 //==================
 
