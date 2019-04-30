@@ -21,7 +21,6 @@ class AppVideo11 extends React.Component
             }
         });
 
-        console.log(videos);
         this.setState({ 
             videos: videos.data.items,
             selectedVideo: videos.data.items[0]
@@ -29,7 +28,6 @@ class AppVideo11 extends React.Component
     }
 
     onVideoSelect = (video) => {
-        console.log(video);
         this.setState({ selectedVideo: video });
     }
 
